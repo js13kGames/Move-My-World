@@ -1,0 +1,119 @@
+
+
+			/*
+			parEnd.prototype.drawSelf = function(){
+				var self = this;
+				if(box.rotating){
+					var rot = box.rotAmount;
+					var s = Math.sin(rot),
+					c = Math.cos(rot);
+					self.position.x -= box.width/2;
+					self.position.y -= box.height/2;
+					var newX = (self.position.x * c - self.position.y * s),
+					newY = (self.position.x * s + self.position.y * c);
+					self.position.x = newX + box.width/2;
+					self.position.y = newY + box.height/2;
+
+				}
+				
+				ctx.fillStyle = "#0000ff";
+				ctx.fillRect(self.position.x, self.position.y, self.width, self.height);
+				var brush = {fill: true, color:"rgb(232, 53, 236)"};
+				var pen = {outline: true, color:"rgb(142, 19, 56)",  width:2};
+				self.position.x += box.position.x;
+				self.position.y += box.position.y;
+				//q.gfx.drawFixedRect(self.position, self.width, self.height, box.rot + self.rot);
+				//q.gfx.drawCircle(self.position, 5, brush, pen);
+				var _rot = self.rot + box.rot,
+				__colH = 120;
+				while(_rot >= Math.PI*2){_rot-=Math.PI*2;}
+				while(_rot < 0){_rot+=Math.PI*2;}
+				_rot = Math.round(_rot);
+				/*switch(_rot){
+					case 0:
+						ctx.fillRect(self.position.x - 20, self.position.y-__colH , 40,__colH);
+					break;
+					case Math.round(Math.PI/2):
+						ctx.fillRect(self.position.x , self.position.y- 20 , __colH,40);
+					break;
+					case Math.round(Math.PI):
+						ctx.fillRect(self.position.x -20 , self.position.y , 40,__colH);
+					break;
+					case Math.round(3*Math.PI/2):
+						ctx.fillRect(self.position.x -__colH, self.position.y- 20 , __colH,40);
+					break;
+				}
+				ctx.translate(self.position.x, self.position.y);
+				ctx.rotate(self.rot + box.rot);
+				ctx.drawImage(self.img, -self.width/2, -self.height/2, self.width, self.height);
+				ctx.rotate(-self.rot - box.rot);
+				ctx.translate(-(self.position.x), -(self.position.y));
+
+
+				self.position.x -= box.position.x;
+				self.position.y -= box.position.y;
+			}*/
+			
+			
+			/*
+		{//[OBJECT] parBlock
+			function parBlock(position, length, width, rot){
+				var self = this;
+				self.name = "parBlock";
+				self.position = position;
+				self.length = length;
+				self.width = 30;
+				self.rot = 0;
+				if(typeof(width) != "undefined") self.width = width;
+				if(typeof(rot) != "undefined")self.rot = rot;
+			}
+			parBlock.prototype.create = function(){
+				var self = this;
+				sprs.push(self);
+				console.log("koko is sick of this");
+			}
+			parBlock.prototype.update = function(){
+
+				var self = this;
+				self.drawSelf();
+
+			}
+			parBlock.prototype.drawSelf = function(){
+				var self = this;
+				
+				//	ctx.strokeRect(self.position.x, self.position.y, self.length, self.width);
+				
+				if(box.rotating){
+					var rot = box.rotAmount;
+					var s = Math.sin(rot),
+					c = Math.cos(rot);
+					self.position.x -= box.width/2;
+					self.position.y -= box.height/2;
+					var newX = (self.position.x * c - self.position.y * s),
+					newY = (self.position.x * s + self.position.y * c);
+					self.position.x = newX + box.width/2;
+					self.position.y = newY + box.height/2;
+				}
+				var brush = {fill: true, color:"rgb(53, 128, 236)"};
+				var pen = {outline: true, color:"rgb(26, 97, 204)",  width:2};
+				self.position.x += box.position.x;
+				self.position.y += box.position.y;
+	
+				ctx.fillStyle = "#ff0000";
+				q.gfx.drawFixedRect(self.position, self.length, self.width, box.rot + self.rot);
+				q.gfx.drawCircle(self.position, 5, brush, pen);
+
+				
+				/*
+				ctx.translate(self.position.x,self.position.y);
+				ctx.rotate(box.rot + self.rot);
+				ctx.drawImage(rectShape,-self.length/2,-self.width,self.length*2, self.width*2);
+				ctx.drawImage(rectShapeHighlight,-self.length/2+8,-self.width+8,self.length*2, self.width*2);
+				ctx.rotate(-box.rot - self.rot);
+				ctx.translate(-(self.position.x),-(self.position.y));
+				
+				self.position.x -= box.position.x;
+				self.position.y -= box.position.y;
+			}
+		}
+*/
